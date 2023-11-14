@@ -109,7 +109,7 @@ function Login() {
         console.log(res.data);
 
         if (res.data.message === "Email not exits") {
-          alert("Email not exits");
+          alert("User with given email does not exist");
         }
         else if (res.data.message === "Login Success") {
 
@@ -121,8 +121,6 @@ function Login() {
       }, fail => {
         console.error(fail); // Error!
       });
-      navigate('/home');
-
     } catch (err) {
       alert(err);
     }
