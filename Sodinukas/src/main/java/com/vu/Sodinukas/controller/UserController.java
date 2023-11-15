@@ -16,14 +16,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(path = "/save")
     public String saveEmployee(@RequestBody UserDTO userDTO)
     {
         String id = userService.addUser(userDTO);
         return id;
     }
-//    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(path = "/login")
     public ResponseEntity<?> loginUser(@RequestBody LoginDTO loginDTO)
     {

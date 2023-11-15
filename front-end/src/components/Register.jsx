@@ -3,15 +3,15 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 
 function Register() {
-  const [employeename, setEmployeename] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUserName] = useState("");
+  const [email, setUserEmail] = useState("");
+  const [password, setUserPassword] = useState("");
 
   async function save(event) {
     event.preventDefault();
     try {
       await axios.post("http://localhost:8085/api/v1/user/save", {
-        employeename: employeename,
+        username: username,
         email: email,
         password: password,
       });
@@ -32,9 +32,9 @@ function Register() {
             <label>Username</label>
             <input type="text" class="form-control" id="username" placeholder="Enter Name"
 
-              value={employeename}
+              value={username}
               onChange={(event) => {
-                setEmployeename(event.target.value);
+                setUserName(event.target.value);
               }}
             />
 
@@ -46,7 +46,7 @@ function Register() {
 
               value={email}
               onChange={(event) => {
-                setEmail(event.target.value);
+                setUserEmail(event.target.value);
               }}
 
             />
@@ -59,7 +59,7 @@ function Register() {
 
               value={password}
               onChange={(event) => {
-                setPassword(event.target.value);
+                setUserPassword(event.target.value);
               }}
 
             />
